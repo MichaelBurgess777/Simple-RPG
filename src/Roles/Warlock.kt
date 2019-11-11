@@ -1,0 +1,5 @@
+package Roles
+
+class Warlock{
+
+}

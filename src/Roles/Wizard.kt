@@ -1,0 +1,4 @@
+package Roles
+
+class Wizard {
+}
