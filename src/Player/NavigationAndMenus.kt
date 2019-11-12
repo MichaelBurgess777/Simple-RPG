@@ -4,6 +4,7 @@ import Player.Player.getInventory
 
 class NavigationAndMenus(val playerClass: Player = Player) {
 
+    //the player has the ability to access his menus or move through this function
     fun playerNavigationAndControl(){
         when(readLine()){
             "Menu", "menu" -> menu()
