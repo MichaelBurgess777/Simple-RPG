@@ -1,5 +1,6 @@
 package Player
 import Items.ItemBase
+import Items.Rope
 import Items.Weapons.RustyDagger
 import Items.Weapons.WeaponsBase
 import Roles.RoleBase
@@ -13,7 +14,7 @@ object Player {
     private var roleInput: String = "warrior"
     private var roleClass: RoleBase = Warrior()
     private var location: String = "Grand Oak Tree"
-    private var inventory: Array<ItemBase> = arrayOf(RustyDagger())
+    private var inventory: Array<ItemBase> = arrayOf(RustyDagger(), Rope())
 
     //Prompts the player to select a role and then goes through what they put in and assigns a role to the roleclass variable
     fun selectRole(){

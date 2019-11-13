@@ -12,7 +12,7 @@ class NavigationAndMenus(val playerClass: Player = Player) {
     }
 
     //Prompts the player with their own little "Pause Menu" and they are able to use it to access in game knowledge
-    fun menu(){
+    private fun menu(){
         println("\n\n\n[inventory][map][quests][skills]")
         when(readLine()){
             "inventory", "i", "I", "Inventory" -> inventory()
@@ -28,6 +28,24 @@ class NavigationAndMenus(val playerClass: Player = Player) {
             println(
             Player.getInventory()[i].name
             )
+        }
+
+        //Stores 2 variables from user input. The first variable is to see if the player is using or studying the item. The second is the item that the player is doing something with.
+        val (a, b) = readLine()!!.split(' ')
+
+        //We are then checking what the player wants to do with that item
+        when(a.toUpperCase()){
+            "USE" -> useItem(b)
+            }
+        }
+    }
+
+    //We then see what Item is being used.
+    private fun useItem(item: String){
+        for (i in Player.getInventory().indices){
+            if (item.toUpperCase() == Player.getInventory()[i].name.toUpperCase()){
+                println("\n\n\nYou have used the ${Player.getInventory()[i].name.capitalize()}")
+            }
         }
     }
 
@@ -45,4 +63,3 @@ class NavigationAndMenus(val playerClass: Player = Player) {
     private fun skills(){
 
     }
-}
